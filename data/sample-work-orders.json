@@ -1,0 +1,39 @@
+[
+  {
+    "id": "WO-1048",
+    "asset": "Compressor A-12",
+    "priority": "urgent",
+    "status": "open",
+    "version": 7,
+    "offlineAllowed": [
+      "note",
+      "photo",
+      "labor",
+      "meter_reading"
+    ]
+  },
+  {
+    "id": "WO-1051",
+    "asset": "Boiler Pump B-4",
+    "priority": "normal",
+    "status": "open",
+    "version": 3,
+    "offlineAllowed": [
+      "note",
+      "labor",
+      "meter_reading"
+    ]
+  },
+  {
+    "id": "WO-1052",
+    "asset": "Rooftop Unit 3",
+    "priority": "due_today",
+    "status": "assigned",
+    "version": 1,
+    "offlineAllowed": [
+      "note",
+      "photo",
+      "parts_request"
+    ]
+  }
+]

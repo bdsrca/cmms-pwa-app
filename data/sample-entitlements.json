@@ -1,0 +1,17 @@
+{
+  "tenant": "demo-tenant",
+  "plan": "operations-plus",
+  "modules": {
+    "mobile_pwa": true,
+    "offline_drafts": true,
+    "api_access": true,
+    "ai_assist": true,
+    "billing_admin": false
+  },
+  "limits": {
+    "offlineQueueItems": 100,
+    "apiTokens": 5,
+    "aiMonthlyTokens": 50000,
+    "photoUploadMB": 25
+  }
+}

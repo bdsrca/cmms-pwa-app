@@ -87,6 +87,55 @@ audit logging before any CMMS service reads or changes data.
 Payment and AI provider credentials remain server-side. The browser receives only short-lived
 session results, public configuration, and user-visible status.
 
+## Expanded Visual Tour
+
+The expanded package adds a second set of public-safe diagrams focused on the field app and
+governance console.
+
+### Field Workflow
+
+![Mobile field workflow](assets/mobile-field-workflow.svg)
+
+The field workflow starts with assigned work, asset lookup, capture actions, and a visible offline
+queue. It treats scan, search, notes, photos, labor, and meter readings as first-class mobile tasks.
+
+### PWA Cache Strategy
+
+![PWA cache strategy](assets/pwa-cache-strategy.svg)
+
+The cache strategy separates installable shell files from operational data. Static app resources
+can be cache-first, work-order reads can be network-first, draft writes can be queued, and billing,
+token, and AI routes stay online-only.
+
+### Offline State Machine
+
+![Offline sync state machine](assets/offline-sync-state-machine.svg)
+
+The offline state machine makes queue behavior visible: queued, syncing, synced, blocked, failed,
+or waiting for review. Users should not have to guess whether a field edit is safe.
+
+### Payments, Tokens, and AI Usage
+
+![Payment entitlement flow](assets/payment-entitlement-flow.svg)
+
+![API token lifecycle](assets/api-token-lifecycle.svg)
+
+![AI usage governance](assets/ai-usage-governance.svg)
+
+These diagrams show how billing events become entitlements, how API tokens move through creation,
+hashing, verification, rotation, and revocation, and how AI requests pass through budget and
+logging controls before reaching a provider route.
+
+## Sanitized Mock Screens
+
+The screenshot files are generated mock screens for this public repository. They do not contain
+real tenant data, customer names, production URLs, private emails, payment details, API keys, or
+model provider credentials.
+
+| Mobile work order | Offline queue | Governance console |
+| --- | --- | --- |
+| ![Mobile work order](screenshots/mobile-work-order.png) | ![Offline queue](screenshots/offline-queue.png) | ![Governance console](screenshots/governance-console.png) |
+
 ## Mobile Optimization
 
 Mobile optimization starts with the workflows that field users repeat every day:
@@ -340,31 +389,102 @@ The examples in [code-samples/selected-snippets.md](code-samples/selected-snippe
 The examples are intentionally shortened and public-safe. They show implementation patterns
 without exposing a production schema, secrets, or provider-specific private configuration.
 
+## Runnable Policy Examples
+
+The expanded version includes small JavaScript modules under [src](src) and a test runner under
+[tests](tests). These are not a production CMMS app. They are compact policy examples that make the
+architecture easier to review.
+
+Included examples:
+
+- [src/offlineQueue.js](src/offlineQueue.js): queue item creation, payload redaction, retry state,
+  and queue summaries
+- [src/syncEngine.js](src/syncEngine.js): server-side validation and conflict decisions for
+  offline mutations
+- [src/cacheStrategy.js](src/cacheStrategy.js): route classification for cache-first,
+  network-first, queue-supported, and online-only behavior
+- [src/entitlementPolicy.js](src/entitlementPolicy.js): module and plan access checks
+- [src/tokenPolicy.js](src/tokenPolicy.js): API token hashing, scope checks, expiry, and revocation
+- [src/aiBudgetGuard.js](src/aiBudgetGuard.js): AI token estimates, feature policy, and sanitized
+  usage metadata
+- [src/mobileTaskPolicy.js](src/mobileTaskPolicy.js): decisions about which field tasks can queue
+  offline
+- [src/demo.js](src/demo.js): a small end-to-end scenario using the sample data
+
+Run locally:
+
+```bash
+npm test
+npm run demo
+```
+
+The test runner uses Node's built-in `assert` module and has no third-party package dependency.
+
 ## Repository Structure
 
 ```text
 .
+|- .env.example
 |- README.md
+|- PAPER.md
+|- package.json
 |- docs/
+|  |- ai-usage-governance.md
 |  |- ai-token-governance.md
+|  |- api-token-governance.md
 |  |- api-token-system.md
+|  |- future-cmms-eam-positioning.md
 |  |- implementation-roadmap.md
+|  |- mobile-field-ux.md
 |  |- mobile-optimization.md
 |  |- offline-sync.md
 |  |- payment-system.md
+|  |- payments-entitlements.md
+|  |- portfolio-notes.md
 |  |- pwa-implementation.md
-|  `- security-privacy.md
+|  |- pwa-offline-sync.md
+|  |- security-privacy.md
+|  `- source-code-map.md
 |- diagrams/
 |  |- architecture.mmd
 |  |- offline-sync.mmd
 |  |- payment-flow.mmd
 |  `- token-flow.mmd
 |- assets/
+|  |- ai-usage-governance.svg
+|  |- api-token-lifecycle.svg
 |  |- cmms-pwa-architecture.svg
+|  |- data-model-map.svg
+|  |- failure-modes-recovery.svg
+|  |- launch-readiness-scorecard.svg
+|  |- mobile-field-workflow.svg
+|  |- offline-sync-state-machine.svg
 |  |- offline-sync.svg
+|  |- payment-entitlement-flow.svg
 |  |- payment-flow.svg
+|  |- pwa-cache-strategy.svg
+|  |- pwa-platform-architecture.svg
+|  |- role-based-surfaces.svg
 |  |- token-governance.svg
 |  `- README.md
+|- screenshots/
+|  |- governance-console.png
+|  |- mobile-work-order.png
+|  `- offline-queue.png
+|- src/
+|  |- aiBudgetGuard.js
+|  |- cacheStrategy.js
+|  |- demo.js
+|  |- entitlementPolicy.js
+|  |- mobileTaskPolicy.js
+|  |- offlineQueue.js
+|  |- syncEngine.js
+|  `- tokenPolicy.js
+|- tests/
+|  `- run-tests.js
+|- data/
+|  |- sample-entitlements.json
+|  `- sample-work-orders.json
 |- code-samples/
 |  |- README.md
 |  `- selected-snippets.md
