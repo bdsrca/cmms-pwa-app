@@ -1,0 +1,10 @@
+flowchart LR
+    A[User Edits Work Order] --> B[Local Draft Store]
+    B --> C[Sync Queue]
+    C --> D{Online?}
+    D -->|No| E[Saved Locally]
+    D -->|Yes| F[Send to API]
+    F --> G{Conflict?}
+    G -->|No| H[Mark Synced]
+    G -->|Yes| I[Needs Review]
+    I --> J[User Resolves Conflict]

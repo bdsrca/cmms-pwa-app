@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-label="Offline sync workflow">
+  <rect width="1400" height="620" fill="#ffffff"/>
+  <text x="520" y="70" font-family="Arial" font-size="34" font-weight="700" fill="#0f1f46">Offline Draft Sync</text>
+  <g font-family="Arial" font-size="18" font-weight="700" fill="#10203f">
+    <rect x="70" y="180" width="190" height="105" rx="16" fill="#f8fbff" stroke="#9bbcf2" stroke-width="2"/>
+    <text x="115" y="225">Edit Work</text><text x="120" y="253">Order</text>
+    <rect x="330" y="180" width="190" height="105" rx="16" fill="#f8fbff" stroke="#9bbcf2" stroke-width="2"/>
+    <text x="365" y="225">Local Draft</text><text x="390" y="253">Store</text>
+    <rect x="590" y="180" width="190" height="105" rx="16" fill="#f8fbff" stroke="#9bbcf2" stroke-width="2"/>
+    <text x="635" y="225">Sync</text><text x="635" y="253">Queue</text>
+    <rect x="850" y="180" width="190" height="105" rx="16" fill="#fffdf2" stroke="#d6a300" stroke-width="2"/>
+    <text x="905" y="240">Online?</text>
+    <rect x="1110" y="115" width="210" height="95" rx="16" fill="#f7fffd" stroke="#0f766e" stroke-width="2"/>
+    <text x="1160" y="170">Synced</text>
+    <rect x="1110" y="275" width="210" height="95" rx="16" fill="#fff7f7" stroke="#dc2626" stroke-width="2"/>
+    <text x="1150" y="330">Needs Review</text>
+  </g>
+  <path d="M265 233 L320 233 M525 233 L580 233 M785 233 L840 233 M1045 210 L1100 170 M1045 260 L1100 320" stroke="#2563eb" stroke-width="4" fill="none" marker-end="url(#a)"/>
+  <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/></marker></defs>
+</svg>

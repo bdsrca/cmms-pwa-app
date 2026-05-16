@@ -1,0 +1,11 @@
+flowchart LR
+    A[Admin Creates Token] --> B[Generate Raw Secret]
+    B --> C[Show Once]
+    B --> D[Hash and Store]
+    E[API Request] --> F[Extract Token]
+    F --> G[Hash Compare]
+    G --> H{Valid?}
+    H -->|No| I[Reject]
+    H -->|Yes| J[Check Tenant, Scope, Expiry]
+    J --> K[Allow Request]
+    K --> L[Audit Usage]

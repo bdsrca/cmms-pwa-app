@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant Admin
+    participant App
+    participant Billing
+    participant Provider
+    participant DB
+
+    Admin->>App: Selects plan or module
+    App->>Billing: Creates payment session
+    Billing->>Provider: Requests checkout session
+    Provider-->>Billing: Returns session reference
+    Billing-->>App: Sends redirect or client secret
+    Provider-->>Billing: Sends verified webhook
+    Billing->>DB: Updates invoice and entitlement
+    App-->>Admin: Shows payment status

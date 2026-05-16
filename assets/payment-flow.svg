@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-label="Internal payment flow">
+  <rect width="1400" height="620" fill="#ffffff"/>
+  <text x="520" y="70" font-family="Arial" font-size="34" font-weight="700" fill="#0f1f46">Internal Payment Boundary</text>
+  <g font-family="Arial" font-size="18" font-weight="700" fill="#10203f">
+    <rect x="70" y="160" width="240" height="125" rx="16" fill="#f8fbff" stroke="#9bbcf2" stroke-width="2"/>
+    <text x="130" y="212">Billing Admin</text>
+    <text x="120" y="242" font-size="15" fill="#40516f">Plan and modules</text>
+    <rect x="390" y="160" width="240" height="125" rx="16" fill="#f8fbff" stroke="#9bbcf2" stroke-width="2"/>
+    <text x="455" y="212">CMMS Billing</text>
+    <text x="438" y="242" font-size="15" fill="#40516f">Invoices and entitlements</text>
+    <rect x="710" y="160" width="240" height="125" rx="16" fill="#f7fffd" stroke="#0f766e" stroke-width="2"/>
+    <text x="758" y="212">Payment Provider</text>
+    <text x="770" y="242" font-size="15" fill="#40516f">Payment methods</text>
+    <rect x="1030" y="160" width="240" height="125" rx="16" fill="#f8fbff" stroke="#9bbcf2" stroke-width="2"/>
+    <text x="1080" y="212">Webhook Handler</text>
+    <text x="1080" y="242" font-size="15" fill="#40516f">Verified events</text>
+  </g>
+  <path d="M315 222 L380 222 M635 222 L700 222 M955 222 L1020 222" stroke="#2563eb" stroke-width="4" fill="none" marker-end="url(#a)"/>
+  <rect x="245" y="405" width="910" height="80" rx="18" fill="#eef6ff" stroke="#b8cdf4" stroke-width="2"/>
+  <text x="390" y="455" font-family="Arial" font-size="22" font-weight="700" fill="#0f3b5f">CMMS stores billing state; provider stores payment credentials</text>
+  <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/></marker></defs>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="640" viewBox="0 0 1400 640" role="img" aria-label="API and AI token governance">
+  <rect width="1400" height="640" fill="#ffffff"/>
+  <text x="470" y="70" font-family="Arial" font-size="34" font-weight="700" fill="#0f1f46">API and AI Token Governance</text>
+  <g font-family="Arial" font-size="18" font-weight="700" fill="#10203f">
+    <rect x="95" y="145" width="270" height="140" rx="16" fill="#f8fbff" stroke="#9bbcf2" stroke-width="2"/>
+    <text x="145" y="198">API Token</text>
+    <text x="130" y="230" font-size="15" fill="#40516f">Hash, scopes, expiry</text>
+    <rect x="455" y="145" width="270" height="140" rx="16" fill="#f8fbff" stroke="#9bbcf2" stroke-width="2"/>
+    <text x="505" y="198">Verification</text>
+    <text x="500" y="230" font-size="15" fill="#40516f">Tenant, role, route</text>
+    <rect x="815" y="145" width="270" height="140" rx="16" fill="#f7fffd" stroke="#0f766e" stroke-width="2"/>
+    <text x="880" y="198">AI Gateway</text>
+    <text x="865" y="230" font-size="15" fill="#40516f">Budget and model route</text>
+  </g>
+  <path d="M370 215 L445 215 M730 215 L805 215" stroke="#2563eb" stroke-width="4" fill="none" marker-end="url(#a)"/>
+  <rect x="290" y="405" width="820" height="80" rx="18" fill="#eef6ff" stroke="#b8cdf4" stroke-width="2"/>
+  <text x="375" y="455" font-family="Arial" font-size="22" font-weight="700" fill="#0f3b5f">Raw secrets stay server-side; usage is scoped, metered, and audited</text>
+  <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/></marker></defs>
+</svg>
